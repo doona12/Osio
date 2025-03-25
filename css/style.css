@@ -1235,6 +1235,7 @@ body {
 
     #section2 .section2_inner .menu_box .best_menu .text_wrap .p2 {
         font-size: 15px;
+        letter-spacing: -1px;
     }
 
     #section2 .section2_inner .menu_box .best_menu .text_wrap .p3 {
