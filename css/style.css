@@ -82,10 +82,6 @@ body {
     font-weight: bold;
 }
 
-#wrap {
-    /* overflow: hidden; */
-}
-
 /* ===== header ===== */
 #header {
     height: 80px;
@@ -841,7 +837,8 @@ body {
     #section1 .Store {
         padding: 20px 6vw;
     }
-    #section1 .Store .text_wrap p{
+
+    #section1 .Store .text_wrap p {
         letter-spacing: -1.5px;
     }
 
@@ -1192,8 +1189,10 @@ body {
     }
 
     #section2 .section2_inner .menu_box .best_menu li {
-        width: 100%; /* height 기준으로 width 자동 조절 */
-        aspect-ratio: 5 / 3; /* 5:2 비율 유지 */
+        width: 100%;
+        /* height 기준으로 width 자동 조절 */
+        aspect-ratio: 5 / 3;
+        /* 5:2 비율 유지 */
     }
 
     #section2 .section2_inner .menu_box .best_menu li:nth-child(1) {
@@ -1232,7 +1231,7 @@ body {
         align-items: center;
         font-size: 18px;
         width: 120px;
-        height: 30px;
+        padding: 2px 0;
     }
 
     #section2 .section2_inner .menu_box .best_menu .text_wrap .p2 {
