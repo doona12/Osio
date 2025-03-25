@@ -282,7 +282,7 @@ a{
     height: 38px;
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 
