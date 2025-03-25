@@ -280,7 +280,7 @@ a{
 }
 
 #popup .flex_box{
-    height: 38px;
+    height: auto;
     align-items: center;
     display: flex;
     justify-content: space-between;
