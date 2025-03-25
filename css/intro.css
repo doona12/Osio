@@ -1,0 +1,356 @@
+@charset 'utf-8';
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 카페24써라운드 폰트적용 */
+@font-face {
+    font-family: 'Cafe24Surround'; /* 여기에 실제 확인한 폰트 이름 입력 */
+    src: url('../font/Cafe24Ssurround-v2.0.woff') format('woff2'),
+         url('../font/Cafe24Ssurround-v2.0.woff') format('woff'),
+         url('/fonts/Cafe24Surround.otf') format('opentype'); /* OTF 파일 포함 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Noto Sans KR 폰트적용*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 25px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+
+    background-color: #333;
+}
+
+/* ===== logo ===== */
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/web/intro_logo.png);
+}
+
+/* ===== left ===== */
+.left{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.left .cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #EC681D;
+    transform: translateX(-1000px);
+}
+.left .text_wrap{
+    padding-left: 6vw;
+}
+
+/* ===== right ===== */
+.right{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.right .text_wrap{
+    padding:0 6vw;
+    text-align: right;
+    align-items: end;
+}
+.right .cover {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #4D2D14;
+    transform: translateX(+1000px);
+}
+
+/* ===== 공통 ===== */
+a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.text_wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+}
+.text_wrap .p1 {
+    font-size: clamp(50px, 3vw, 80px);
+}
+
+.text_wrap .p2 {
+    font-size: clamp(20px, 3vw, 40px);
+}
+
+.text_wrap .p3 {
+    margin-top: 40px;
+    font-size: clamp(16px, 2.4vw, 22px);
+    line-height: 1.6em;
+    font-weight: 400;
+}
+.text_wrap .p4 {
+    font-size: clamp(18px, 3vw, 18px);
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+}
+.line {
+    width: 150px;
+    height: 3px;
+    display: inline-block;
+    background-color: white;
+}
+.cover {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+
+/* ===== hover 효과 ===== */
+
+.left:hover .cover,
+.right:hover .cover {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.left:hover .text_wrap span.p4,
+.right:hover .text_wrap span.p4 {
+    opacity: 1;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 10px 0;
+    transform: translateY(0);
+    transition: all 0.7s ease;
+}
+
+.left:hover .text_wrap span.p4 {
+    background-color: #4D2D14;
+
+}
+
+.right:hover .text_wrap span.p4 {
+    background-color: #EC681D;
+}
+
+.left:hover .line {
+    background-color: #4D2D14;
+}
+
+.right:hover .line {
+    background-color: #EC681D;
+}
+
+/* ===== popup ===== */
+.popup_open {
+    cursor: pointer;
+}
+#modal {
+    background-color: #33333336;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#popup {
+    width: 668px;
+    height: 843px;
+    background-color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#popup img{
+    display: block;
+    width: 658px;
+    height: 800px;
+}
+
+.popup_close {
+    display: inline-block;
+    border: none;
+    color: rgb(61, 44, 156);
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+#popup .flex_box{
+    height: 38px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+#popup .flex_box p{
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 180px;
+    display: inline-block;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin-right: 5px;
+    padding: initial;
+    border: initial;
+}
+
+@media(min-width:701px) {
+    .left {
+        background-image: url(../images/web/브랜드_웹.png);
+    }
+    .right {
+        background-image: url(../images/web/창업_웹.png);
+    }
+}
+
+@media(max-width:700px) {
+    .line{
+        margin: 15px 0;
+    }
+    .p2{
+        display: none;
+    }
+    .text_wrap .p3{
+        margin: 0;
+    }
+    .left .text_wrap{
+        padding-left: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .right .text_wrap{
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+    .right {
+        background-image: url(../images/mobile/창업_모바일.png);
+        width: 100%;
+        height: 50vh;
+    }
+
+    .left {
+        background-image: url(../images/mobile/브랜드_모바일.png);
+        width: 100%;
+        height: 50vh;
+    }
+
+    /* popup */
+    #popup{
+        width: 80%;
+        height: auto;
+    }
+    #popup img{
+        width: 100%;
+        height: 100%;
+    }
+
+}
