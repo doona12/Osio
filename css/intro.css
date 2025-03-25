@@ -256,7 +256,6 @@ a{
 }
 #popup {
     width: 668px;
-    height: 843px;
     background-color: white;
     padding: 5px;
     box-sizing: border-box;
@@ -275,8 +274,12 @@ a{
     color: rgb(61, 44, 156);
     font-weight: bold;
     cursor: pointer;
-    padding: 5px 10px;
+    padding-right: 10px;
     background-color: transparent;
+}
+
+#popup .checkbox_wrap{
+    display: flex;
 }
 
 #popup .flex_box{
@@ -291,7 +294,6 @@ a{
     color: #555;
     font-size: 14px;
     text-align: center;
-    margin-right: 180px;
     display: inline-block;
 }
 
@@ -355,6 +357,15 @@ input[type="checkbox" i] {
     #popup img{
         width: 100%;
         height: 100%;
+    }
+
+    #popup .checkbox_wrap p{
+        font-size: clamp(12px, 3vw, 14px);
+        letter-spacing: -1px;
+    }
+
+    #popup .flex_box .popup_close{
+        font-size: clamp(12px, 3vw, 14px);
     }
 
 }
