@@ -142,6 +142,7 @@ body,html{
 .right .text_wrap{
     text-align: right;
     align-items: end;
+    padding-right: 6vw;
 }
 .right .cover {
     position: absolute;
